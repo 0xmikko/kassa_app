@@ -1,0 +1,115 @@
+{
+    "metadata": {
+        "version": "1.0.0",
+        "lastUpdated": "2024-01-15T00:00:00Z",
+        "description": "Product database with barcode mappings for Kids Shop Kassa App",
+        "totalProducts": 5
+    },
+    "products": [
+        {
+            "id": "8712345678906",
+            "name": "Kruidvat NewBorn Mini Maat 2 Luiers Midpack",
+            "price": 7.49,
+            "category": "Baby Care",
+            "description": "Premium newborn diapers size 2 (3-6kg) with capture pocket technology and wetness indicator. Dermatologically tested, latex-free, lotion-free and perfume-free. Awarded Best Private Label Product 2025."
+        },
+        {
+            "id": "8723456789016",
+            "name": "Kruidvat Gold Caramel White Chocolate",
+            "price": 2.99,
+            "category": "Confectionery",
+            "description": "Premium white chocolate with luxurious caramelized flavor. Rich and creamy texture with beautiful golden color from caramelized sugar and milk. Perfect indulgent treat."
+        },
+        {
+            "id": "8734567890126",
+            "name": "Kruidvat Aloe Vera Hand Soap",
+            "price": 1.29,
+            "category": "Personal Care",
+            "description": "Gentle hand soap with aloe vera gel that doesn't dry out skin. pH skin-neutral formula with fresh spring scent. Keeps hands soft and supple. 500ml pump bottle."
+        },
+        {
+            "id": "8745678901236",
+            "name": "Food Storage Container with Green Lid",
+            "price": 3.99,
+            "category": "Household",
+            "description": "Clear plastic food storage container with airtight green screw-on lid. Perfect for storing leftovers, meal prep, or dry goods. BPA-free and dishwasher safe."
+        },
+        {
+            "id": "8756789012346",
+            "name": "Pink Heart Ruler 15cm",
+            "price": 1.49,
+            "category": "Stationery",
+            "description": "Decorative transparent pink ruler with heart and star patterns. 15cm length with clear measurement markings. Perfect for school, office or crafting projects."
+        },
+        {
+            "id": "8767890123456",
+            "name": "Sasuage",
+            "price": 2.79,
+            "category": "Health & Supplements",
+            "description": "High-quality vitamin supplement capsule from Kruidvat's own brand. Orange/brown soft gel capsule containing essential vitamins and minerals. Part of Kruidvat's sustainable packaging initiative."
+        },
+        {
+            "id": "8719179234568",
+            "name": "Handmade Beaded Bracelet Set - Pastel Colors with star charms",
+            "price": 4.99,
+            "category": "Accessories",
+            "description": "Beautiful handmade beaded bracelet set with pastel colored beads including pink, purple, blue, and green ceramic and wooden beads. Set of 2 bracelets with elastic band."
+        },
+        {
+            "id": "8720674987651",
+            "name": "Graphic Design Decorative Patches",
+            "price": 2.49,
+            "category": "Crafts",
+            "description": "Colorful glitter decorative patches for customizing clothing, bags, or accessories. Multiple colors including pink, blue, gold, and silver glitter finish."
+        },
+        {
+            "id": "8719328765431",
+            "name": "Colorful Wooden Bead Bracelet",
+            "price": 6.95,
+            "category": "Accessories",
+            "description": "Vibrant wooden and ceramic bead bracelet featuring blue striped beads, orange ovals, red rounds, yellow spheres, and black accents with yellow cord details."
+        },
+        {
+            "id": "5433870000002",
+            "name": "Kruidvat Espresso Coffee Capsules",
+            "price": 3.99,
+            "category": "Food & Beverages",
+            "description": "Premium aluminum coffee capsules, 20 pieces, 100% Arabica beans from South America and Africa. Compatible with Nespresso machines. Intense and versatile flavor with powerful aroma."
+        },
+        {
+            "id": "5246473000009",
+            "name": "Kruidvat Happy Harmony Shower Gel",
+            "price": 1.69,
+            "category": "Personal Care",
+            "description": "Creamy shower gel with mandarin blossom and cedarwood scent, 300ml. pH-balanced formula for normal skin, leaves skin feeling soft and refreshed with a delightful citrusy-woody fragrance."
+        },
+        {
+            "id": "8719456123783",
+            "name": "Kruidvat Wild Shampoo with Argan Oil",
+            "price": 2.29,
+            "category": "Personal Care",
+            "description": "Nourishing shampoo enriched with Moroccan argan oil for dry and damaged hair. Helps restore moisture and shine while gently cleansing. Suitable for frequent use."
+        },
+        {
+            "id": "8720987654325",
+            "name": "Purple Beaded Bracelet ",
+            "price": 3.95,
+            "category": "Accessories",
+            "description": "Elegant purple and lavender beaded bracelet featuring smooth round beads, pink cube accents, golden metallic beads, and small star charms in pink and white."
+        },
+        {
+            "id": "7148400000008",
+            "name": "Kruidvat Ultra Concentrated Dish Soap",
+            "price": 0.99,
+            "category": "Household",
+            "description": "Ultra concentrated dish soap, 500ml. pH-neutral formula for hands, long-lasting foam action, effectively removes grease and food residue. Lightly perfumed for fresh clean dishes."
+        },
+        {
+            "id": "8719876543215",
+            "name": "Purple makeup ",
+            "price": 1.25,
+            "category": "Home Decor",
+            "description": "Decorative purple bottle cap or closure with embossed floral design. Made from durable plastic material, perfect for craft projects or as a replacement cap."
+        }
+    ]
+}

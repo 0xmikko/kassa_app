@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle with gradient -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#01AEF2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0088CC;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <circle cx="512" cy="512" r="480" fill="url(#gradient)" stroke="#fff" stroke-width="8"/>
+  
+  <!-- Shopping cart -->
+  <g transform="translate(200, 250)">
+    <!-- Cart body -->
+    <rect x="50" y="100" width="350" height="200" rx="20" fill="#fff" stroke="#01AEF2" stroke-width="8"/>
+    
+    <!-- Cart handle -->
+    <rect x="20" y="80" width="80" height="20" rx="10" fill="#fff"/>
+    
+    <!-- Cart wheels -->
+    <circle cx="150" cy="360" r="30" fill="#fff" stroke="#01AEF2" stroke-width="6"/>
+    <circle cx="350" cy="360" r="30" fill="#fff" stroke="#01AEF2" stroke-width="6"/>
+    
+    <!-- Barcode inside cart -->
+    <g transform="translate(80, 130)">
+      <rect x="0" y="0" width="8" height="80" fill="#01AEF2"/>
+      <rect x="20" y="0" width="12" height="80" fill="#01AEF2"/>
+      <rect x="45" y="0" width="6" height="80" fill="#01AEF2"/>
+      <rect x="65" y="0" width="15" height="80" fill="#01AEF2"/>
+      <rect x="95" y="0" width="8" height="80" fill="#01AEF2"/>
+      <rect x="115" y="0" width="10" height="80" fill="#01AEF2"/>
+      <rect x="140" y="0" width="12" height="80" fill="#01AEF2"/>
+      <rect x="165" y="0" width="6" height="80" fill="#01AEF2"/>
+      <rect x="185" y="0" width="14" height="80" fill="#01AEF2"/>
+      <rect x="215" y="0" width="8" height="80" fill="#01AEF2"/>
+      <rect x="235" y="0" width="10" height="80" fill="#01AEF2"/>
+      <rect x="260" y="0" width="12" height="80" fill="#01AEF2"/>
+      <rect x="285" y="0" width="6" height="80" fill="#01AEF2"/>
+    </g>
+  </g>
+  
+  <!-- Scanner beam effect -->
+  <line x1="150" y1="500" x2="600" y2="500" stroke="#FFD700" stroke-width="6" opacity="0.8"/>
+  <line x1="150" y1="510" x2="600" y2="510" stroke="#FFD700" stroke-width="4" opacity="0.6"/>
+  
+  <!-- AH text -->
+  <text x="512" y="750" font-family="Arial, sans-serif" font-size="120" font-weight="bold" text-anchor="middle" fill="#fff">AH</text>
+</svg> 
