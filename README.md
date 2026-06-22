@@ -1,97 +1,247 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 🛒 Kids Shop Kassa App
 
-# Getting Started
+A fun and educational React Native app designed for kids to play shop! This app simulates a real cash register (kassa) experience where children can scan product barcodes and manage a shopping cart.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Features
 
-## Step 1: Start Metro
+- 📱 **iPad-optimized interface** - Designed specifically for tablet use
+- 📷 **Real-time barcode scanning** - Camera is always active for instant scanning
+- 🛍️ **Shopping cart management** - Add, remove, and update product quantities
+- 💰 **Price calculation** - Automatic total calculation with checkout functionality
+- 🎮 **Kid-friendly UI** - Large buttons, clear text, and intuitive design
+- 🔄 **Reset functionality** - Easy checkout process that clears the cart
+- 📊 **Organized product database** - JSON-based product management with categories
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Supported Barcode Types
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+- QR codes
+- EAN-13 barcodes
+- EAN-8 barcodes
+- UPC-A barcodes
 
-```sh
-# Using npm
-npm start
+## Product Database
 
-# OR using Yarn
-yarn start
+The app uses a JSON-based product database located in `data/products.json`. The current database includes:
+
+- **Beverages**: Apple Juice ($2.99)
+- **Snacks**: Chocolate Bar ($1.49)  
+- **Fruits**: Banana ($0.89)
+- **Dairy**: Milk 1L ($3.29)
+- **Bakery**: Bread ($2.19)
+
+Each product includes:
+- Unique barcode ID
+- Name and price
+- Category classification
+- Detailed description
+
+## Prerequisites
+
+- Node.js (>= 18)
+- React Native development environment
+- iOS Simulator or Android Emulator
+- Physical device with camera for testing barcode scanning
+
+## Installation
+
+1. **Clone and navigate to the project:**
+   ```bash
+   cd KassaApp
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **iOS Setup:**
+   ```bash
+   cd ios && pod install && cd ..
+   ```
+
+4. **Run the app:**
+   
+   For iOS:
+   ```bash
+   npm run ios
+   ```
+   
+   For Android:
+   ```bash
+   npm run android
+   ```
+
+## Usage
+
+1. **Grant Camera Permission:** When first opening the app, grant camera access
+2. **Scan Products:** Point the camera at supported barcodes to add items to cart
+3. **Manage Cart:** Use + and - buttons to adjust quantities or remove items
+4. **Checkout:** Press the checkout button to complete the purchase and reset the cart
+
+## Technical Details
+
+### Built With
+- **React Native 0.79.2** - Cross-platform mobile framework
+- **TypeScript** - Type-safe JavaScript
+- **React Native Vision Camera 4.6.4** - Camera functionality and barcode scanning
+- **React Native Reanimated 3.17.5** - Smooth animations
+
+### Architecture
+- **Single Screen App** - Optimized for simplicity and kid-friendly use
+- **Split Layout** - Camera view on left, shopping cart on right (perfect for iPad)
+- **Real-time Scanning** - Continuous barcode detection with debouncing
+- **State Management** - React hooks for cart and scanning state
+- **Modular Product System** - JSON-based product database with TypeScript service layer
+
+### Key Components
+- `App.tsx` - Main application component
+- `data/products.json` - Product database with barcode mappings
+- `src/productRepository.ts` - Product service layer with search and category features
+- Camera integration with built-in code scanner
+- Shopping cart with CRUD operations
+- Responsive design for tablet use
+
+## Customization
+
+### Adding New Products
+Edit the `data/products.json` file:
+
+```json
+{
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-01-15T00:00:00Z",
+    "description": "Product database with barcode mappings for Kids Shop Kassa App",
+    "totalProducts": 6
+  },
+  "products": {
+    "your-barcode-here": {
+      "id": "your-barcode-here",
+      "name": "Product Name",
+      "price": 4.99,
+      "quantity": 1,
+      "category": "Category Name",
+      "description": "Product description"
+    }
+  }
+}
 ```
 
-## Step 2: Build and run your app
+### Using the Product Service
+The app includes a robust product service (`src/productRepository.ts`) with methods for:
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+```typescript
+// Get product by barcode
+productService.getProductByBarcode('1234567890123');
 
-### Android
+// Search products
+productService.searchProducts('apple');
 
-```sh
-# Using npm
-npm run android
+// Get products by category
+productService.getProductsByCategory('Beverages');
 
-# OR using Yarn
-yarn android
+// Get all categories
+productService.getCategories();
 ```
+
+### Styling
+All styles are defined in the `styles` object at the bottom of `App.tsx`. You can customize:
+- Colors and themes
+- Button sizes and shapes
+- Layout proportions
+- Typography
+
+## File Structure
+
+```
+├── App.tsx                    # Main application component
+├── data/
+│   └── products.json         # Product database
+├── src/
+│   └── productRepository.ts   # Product service layer
+├── ios/                      # iOS specific files
+├── android/                  # Android specific files
+└── package.json             # Dependencies
+```
+
+## Permissions
 
 ### iOS
+- Camera access for barcode scanning
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+### Android
+- Camera permission for barcode scanning
+- MLKit barcode scanning model (automatically downloaded)
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+## Troubleshooting
 
-```sh
-bundle install
+### Camera Not Working
+- Ensure camera permissions are granted
+- Check that device has a working camera
+- Verify the app is running on a physical device (camera doesn't work in simulators)
+
+### Barcode Not Recognized
+- Ensure the barcode is in the supported formats (QR, EAN-13, EAN-8, UPC-A)
+- Add the barcode to the `data/products.json` file if it's a custom product
+- Check lighting conditions and barcode quality
+
+### Build Issues
+- Run `npm install` to ensure all dependencies are installed
+- For iOS: `cd ios && pod install`
+- Clean build: `npm run clean` (if available) or manually clean in Xcode/Android Studio
+
+## Barcode Label Generator
+
+The app includes a TypeScript script to generate printable PDF labels with barcodes for all products in the database.
+
+### Generate Barcode Labels
+```bash
+npm run generate-barcodes
 ```
 
-Then, and every time you update your native dependencies, run:
+This will:
+- Read all products from `data/products.json`
+- Generate CODE128 barcodes for each product ID
+- Create a printable PDF with product names, prices, and categories
+- Save the PDF in the `output/` directory
 
-```sh
-bundle exec pod install
-```
+### Features
+- **A4 format** - Ready for standard printer paper
+- **2 labels per row** - Optimized for label sheets
+- **Complete product info** - Barcode, name, price, and category
+- **Error handling** - Continues processing if individual barcodes fail
+- **Configurable layout** - Easily adjust dimensions and spacing
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+For more details, see `scripts/README.md`.
 
-```sh
-# Using npm
-npm run ios
+## Future Enhancements
 
-# OR using Yarn
-yarn ios
-```
+- 🌐 **API Integration** - Connect to real product database
+- 🎵 **Sound Effects** - Add scanning and checkout sounds
+- 🏆 **Achievements** - Gamify the shopping experience
+- 💳 **Payment Simulation** - Add different payment methods
+- 📊 **Shopping History** - Track previous purchases
+- 🌍 **Multi-language** - Support for different languages
+- 📱 **Product Management UI** - Admin interface for managing products
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## Contributing
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+This is an educational project perfect for learning React Native development. Feel free to:
+- Add new features
+- Improve the UI/UX
+- Add more product categories
+- Enhance the scanning experience
+- Extend the product service functionality
 
-## Step 3: Modify your app
+## License
 
-Now that you have successfully run the app, let's make changes!
+This project is open source and available under the MIT License.
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+## Support
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+For questions or issues, please check the troubleshooting section above or refer to the React Native Vision Camera documentation.
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+---
 
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+**Happy Shopping! 🛒✨**
+# kassa_app
